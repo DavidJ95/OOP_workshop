@@ -4,15 +4,18 @@ Mappen indeholder kode men den mangler adskillige ting for at være et komplet k
 
 <details>
   <summary>Svar</summary>
-    * README.md
-    * requirements.txt
-    * mk_env.sh
-    * .venv/
-    * .vscode/launch.json
+
+  #### Tilføj:
+  * README.md
+  * requirements.txt
+  * mk_env.sh
+  * .venv/
+  * .vscode/launch.json
+  
 </details>
 
 
-# Fælles gennemgang i training_*-filerne
+# Fælles gennemgang i training-filerne
 Gennemgå funktioner og objekter i plenum...
 
 
@@ -31,7 +34,7 @@ Scriptet køres af scripts/main_ball_functions.py og importerer calc_ball_kinema
 4. Er de underliggende funktioner genbrugelige?
 
 
-# Undersøg main_ball_objkect.py
+# Undersøg main_ball_object.py
 Dette script forsøger at køre samme eksperiment med et bold-objekt
 
 1. Er scriptet pænere?
@@ -60,9 +63,9 @@ Tjek at resultatet er det samme som i main_ball_functions.py
 <details>
   <summary>Eksempelløsning</summary>
 
-    1. Tilføj til MassObject:
+  ### Tilføj til MassObject:
 
-        ```
+
         def _update_momentum(self, duration_s):
             self.momentum = self.momentum + self.force * duration_s
 
@@ -72,11 +75,11 @@ Tjek at resultatet er det samme som i main_ball_functions.py
         def null_force(self):
             self.force = 0
             self.acceleration = 0
-        ```   
+ 
 
-    2. Masseobjekt:
+  ### BallObject:
 
-    ```
+
     import mass_object
 
     class Ball(mass_object.MassObject):
@@ -99,7 +102,7 @@ Tjek at resultatet er det samme som i main_ball_functions.py
             self.apply_force(force_N = force_N, duration_s = 0.08)
             self.null_force()
             self.apply_gravity()
-    ```
+
 
 </details>
 
