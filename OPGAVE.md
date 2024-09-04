@@ -12,6 +12,10 @@ git initialisering:
     .git/
     .gitignore
 
+
+# Fælles gennemgang i training_*-filerne
+
+
 # Undersøg boldeksperimentet
 Projektet src/dropkick/ undersøger hvad der sker når man slipper en bold i 2 sek
 og sparker den lodret opad.
