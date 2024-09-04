@@ -2,18 +2,21 @@
 
 Mappen indeholder kode men den mangler adskillige ting for at være et komplet kodeprojekt
 
-## Svar
-README.md
-requirements.txt
-mk_env.sh
-.venv/
-.vscode/launch.json
-git initialisering:
-    .git/
-    .gitignore
+<details>
+  <summary>Svar</summary>
+    README.md
+    requirements.txt
+    mk_env.sh
+    .venv/
+    .vscode/launch.json
+    git initialisering:
+        .git/
+        .gitignore
+</details>
 
 
 # Fælles gennemgang i training_*-filerne
+Gennemgå funktioner og objekter i plenum...
 
 
 # Undersøg boldeksperimentet
@@ -51,43 +54,56 @@ Tjek at resultatet er det samme som i main_ball_functions.py
 
 3. Er objektet genbrugeligt?
 
-4. ...
-Er bagvedliggende objekt genbrugeligt?
+<details>
+  <summary>Ekstra spørgsmål</summary>
+  4. Er bagvedliggende objekt genbrugeligt?
+</details>
 
-## Eksempelløsning:
 
-Tilføj til MassObject:
+<details>
+  <summary>Eksempelløsning</summary>
 
-    def _update_momentum(self, duration_s):
-        self.momentum = self.momentum + self.force * duration_s
+    ### Tilføj til MassObject:
 
-    def _update_speed(self, duration_s):
-        self.speed = self.speed + self.acceleration * duration_s
+        ```
+        def _update_momentum(self, duration_s):
+            self.momentum = self.momentum + self.force * duration_s
 
-    def null_force(self):
-        self.force = 0
-        self.acceleration = 0
-        
+        def _update_speed(self, duration_s):
+            self.speed = self.speed + self.acceleration * duration_s
 
-import mass_object
+        def null_force(self):
+            self.force = 0
+            self.acceleration = 0
+        ```   
 
-class Ball(mass_object.MassObject):
+    ### Masseobjekt:
 
-    def __init__(self, mass_kg, speed_ms = 0, acceleration_ms2 = 0):
-        super().__init__(mass_kg, speed_ms, acceleration_ms2)
+    ```
+    import mass_object
 
-    def drop(self, drop_duration_s):
-        ''' Method that simulates a ball being held and dropped. '''
+    class Ball(mass_object.MassObject):
 
-        self.null_force()
+        def __init__(self, mass_kg, speed_ms = 0, acceleration_ms2 = 0):
+            super().__init__(mass_kg, speed_ms, acceleration_ms2)
 
-        print("Dropping ball...")
-        self.apply_gravity(duration_s = drop_duration_s)
+        def drop(self, drop_duration_s):
+            ''' Method that simulates a ball being held and dropped. '''
 
-    def kick(self, force_N):
-        ''' Method that simulates a ball being kicked. '''
+            self.null_force()
 
-        print("Kicking ball...")
-        self.apply_force(force_N = force_N, duration_s = 0.08)
-        self.null_force()
-        self.apply_gravity()
+            print("Dropping ball...")
+            self.apply_gravity(duration_s = drop_duration_s)
+
+        def kick(self, force_N):
+            ''' Method that simulates a ball being kicked. '''
+
+            print("Kicking ball...")
+            self.apply_force(force_N = force_N, duration_s = 0.08)
+            self.null_force()
+            self.apply_gravity()
+    ```
+
+</details>
+
+
