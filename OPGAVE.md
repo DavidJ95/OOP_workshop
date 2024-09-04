@@ -4,14 +4,11 @@ Mappen indeholder kode men den mangler adskillige ting for at være et komplet k
 
 <details>
   <summary>Svar</summary>
-    README.md
-    requirements.txt
-    mk_env.sh
-    .venv/
-    .vscode/launch.json
-    git initialisering:
-        .git/
-        .gitignore
+    * README.md
+    * requirements.txt
+    * mk_env.sh
+    * .venv/
+    * .vscode/launch.json
 </details>
 
 
@@ -63,7 +60,7 @@ Tjek at resultatet er det samme som i main_ball_functions.py
 <details>
   <summary>Eksempelløsning</summary>
 
-    ### Tilføj til MassObject:
+    1. Tilføj til MassObject:
 
         ```
         def _update_momentum(self, duration_s):
@@ -77,7 +74,7 @@ Tjek at resultatet er det samme som i main_ball_functions.py
             self.acceleration = 0
         ```   
 
-    ### Masseobjekt:
+    2. Masseobjekt:
 
     ```
     import mass_object
