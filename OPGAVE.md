@@ -71,10 +71,6 @@ Tjek at resultatet er det samme som i main_ball_functions.py
 
         def _update_speed(self, duration_s):
             self.speed = self.speed + self.acceleration * duration_s
-
-        def null_force(self):
-            self.force = 0
-            self.acceleration = 0
  
 
   ### BallObject:
@@ -90,18 +86,17 @@ Tjek at resultatet er det samme som i main_ball_functions.py
         def drop(self, drop_duration_s):
             ''' Method that simulates a ball being held and dropped. '''
 
-            self.null_force()
-
             print("Dropping ball...")
-            self.apply_gravity(duration_s = drop_duration_s)
+            self.apply_gravity()
+            self.update_state(drop_duration_s)
 
         def kick(self, force_N):
             ''' Method that simulates a ball being kicked. '''
 
             print("Kicking ball...")
-            self.apply_force(force_N = force_N, duration_s = 0.08)
-            self.null_force()
-            self.apply_gravity()
+            self.apply_force(force_N = force_N)
+            self.update_state(duration_s = 0.08)
+            self.apply_force(force_N = -force_N)
 
 
 </details>

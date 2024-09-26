@@ -3,7 +3,16 @@ import numpy as np
 
 
 def main(ball_object, drop_duration_s, kick_force_N):
-    ''' Script that examines ball behavior when kicked and dropped.'''
+    ''' Script that examines ball behavior when kicked and dropped.
+    
+    OOP (Object-Orientered Python) has the advantage over using purely functions,
+    that objects can have states and attributes that persist for as long as needed.
+    States are made up of attributes such as forces acting on other attributes,
+    such as momentum. With OOP, the methods in this assignment need less specificity.
+
+    Hint: In an action such as a kick, a force is only applied
+    as long as there is contact between the foot and the ball.
+    '''
 
     print(ball_object)
     ball_object.drop(drop_duration_s = drop_duration_s)
