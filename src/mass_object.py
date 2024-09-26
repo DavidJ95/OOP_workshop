@@ -14,19 +14,20 @@ class MassObject:
         self.momentum = self.mass * self.speed
 
     def __str__(self):
-        return f"\n Acceleration: {np.round(self.acceleration,2)} m/s^2, Speed: {np.round(self.speed,2)} m/s, \n Mass: {np.round(self.mass,2)} kg, Force: {np.round(self.force,2)} N, Momentum: {np.round(self.momentum,2)} kg m/s."
+        return f"""\n Acceleration: {np.round(self.acceleration,2)} m/s^2, 
+        Speed: {np.round(self.speed,2)} m/s, \n 
+        Mass: {np.round(self.mass,2)} kg, 
+        Force: {np.round(self.force,2)} N, 
+        Momentum: {np.round(self.momentum,2)} kg m/s."""
     
     def update_state(self, duration_s):
         self._update_momentum(duration_s)
         self._update_speed(duration_s)
 
-    def apply_force(self, force_N, duration_s = None):
+    def apply_force(self, force_N):
         self.force += force_N
         self.acceleration = self.force / self.mass
 
-        if duration_s is not None:
-            self.update_state(duration_s = duration_s)
-
-    def apply_gravity(self, duration_s = None):
+    def apply_gravity(self):
         force_N = MassObject.g * self.mass
-        self.apply_force(force_N = force_N, duration_s = duration_s) 
+        self.apply_force(force_N = force_N) 
